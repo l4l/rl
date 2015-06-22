@@ -13,7 +13,16 @@ import java.util.Vector;
 public class MapGenerator {
 
     public static void main(String[] args) throws IOException {
-        final Raster raster = ImageIO.read(new File("res/Test.png")).getData();
+        File f = new File(System.getProperty("user.dir"));
+        for (File s : f.listFiles()) {
+            if (!s.isDirectory() && s.getName().matches(".*\\.((png)|(jp[e]?g)|(gif)(bmp))$"))
+                generate(s);
+        }
+
+    }
+
+    public static void generate(File image) throws IOException {
+        final Raster raster = ImageIO.read(image).getData();
         Vector<Tile> tiles = new Vector<Tile>();
 
         final int size = raster.getWidth();
@@ -27,7 +36,7 @@ public class MapGenerator {
         }
 
         int i = size;
-        DataOutputStream dos = new DataOutputStream(new FileOutputStream(new File("world.map")));
+        DataOutputStream dos = new DataOutputStream(new FileOutputStream(new File(image.getName() + ".map")));
 
         for (int j = tiles.size() - 1; j >= 0; j--) {
             dos.writeChar(tiles.get(j).sym);

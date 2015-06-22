@@ -14,7 +14,16 @@ import java.util.Vector;
 public class PicGenerator {
 
     public static void main(String[] args) throws IOException {
-        DataInputStream dis = new DataInputStream(new FileInputStream(new File("world.map")));
+        File f = new File(System.getProperty("user.dir"));
+        for (File s : f.listFiles()) {
+            if (!s.isDirectory() && s.getName().matches(".*\\.(map)$"))
+                generate(s);
+        }
+    }
+
+    public static void generate(File map) throws IOException {
+
+        DataInputStream dis = new DataInputStream(new FileInputStream(map));
 
         int width = 0, k = 0;
         Vector<Tile> tiles = new Vector<Tile>();
@@ -46,6 +55,6 @@ public class PicGenerator {
         }
         bufferedImage.setData(raster);
 
-        System.out.println(ImageIO.write(bufferedImage, "png", new File("TestImage.png")));
+        ImageIO.write(bufferedImage, "png", new File(map.getName() + ".png"));
     }
 }
