@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Arrays;
 
 /**
  * Created by kitsu.
@@ -63,7 +64,23 @@ public class DB {
         }
     }
 
-    public boolean addToken(String user, char token[]) {
+    public boolean addToken(int id, String token) {
+        try {
+            return con.prepareStatement("INSERT INTO users.token " +
+                    "(ID, Token, Expiry) VALUES(\"" +
+                    id + "\", \"" +
+                    token + "\", " +
+                    (System.currentTimeMillis() / 1000L) + ")").execute();
+        } catch (SQLException e) {
+            return false;
+        }
+    }
 
+    public int getId(String user, String pass) {
+        try {
+            return Integer.parseInt(con.nativeSQL("SELECT ID FROM users.accounts WHERE Nick=" + user + ", Password=" + pass));
+        } catch (SQLException e) {
+            return -1;
+        }
     }
 }
