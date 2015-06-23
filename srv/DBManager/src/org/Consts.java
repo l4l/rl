@@ -6,7 +6,7 @@ package org;
  */
 public class Consts {
 
-    public static final int LOGIN_PORT = 12345;
+    public static final int LOGIN_PORT = 1028;
     public static final int LOGIN_MSG_SND = 256;
 
     public static final int LOGIN_NICK_SIZE = 128;
