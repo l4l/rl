@@ -33,7 +33,7 @@ public final class DB {
         String user = "", pas = "";
         try (DataInputStream in = new DataInputStream(
                 new FileInputStream(new File(System.getProperty("user.dir") +
-                        File.separator + "data")))) {
+                        File.separator + "data.inf")))) {
 
             while (in.available() > 0) {
                 String tmp = in.readLine();
@@ -42,8 +42,7 @@ public final class DB {
                 else if (tmp.matches("^[Pp]assword.*"))
                     pas = tmp.split("=", 2)[1];
             }
-            con = DriverManager.getConnection("jdbc:mysql://localhost/test?" +
-                    "user=" + user + "&password=" + pas + "&database=users");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/", user, pas);
             con.prepareStatement("use users;").execute();
         } catch (Exception e) {
             Logger.INSTANCE.log("DB", e);
@@ -85,5 +84,5 @@ public final class DB {
         } catch (SQLException e) {
             return -1;
         }
-    } 
+    }
 }
