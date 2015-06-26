@@ -1,6 +1,8 @@
 #ifndef CLIENT_CHARACTER_H
 #define CLIENT_CHARACTER_H
 
+#include <stdint.h>
+#include "Stats.h"
 #include "Chars.h"
 
 class Character {

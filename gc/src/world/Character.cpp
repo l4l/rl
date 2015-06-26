@@ -1,6 +1,4 @@
-#include <stdint.h>
 #include "Character.h"
-#include "Stats.h"
 
 using namespace game;
 
