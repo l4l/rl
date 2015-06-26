@@ -1,7 +1,8 @@
 #ifndef CLIENT_CONSTS_H
 #define CLIENT_CONSTS_H
 
-#define PORT 1028
+#define LOG_PORT 1028
+#define GAME_PORT
 #define HOST "151.248.125.250"
 
 namespace login {
