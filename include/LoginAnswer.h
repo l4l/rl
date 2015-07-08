@@ -1,7 +1,7 @@
 #ifndef CLIENT_LOGINANSWER_H
 #define CLIENT_LOGINANSWER_H
 
-#include "../Consts.h"
+#include "NetInf.h"
 
 namespace login {
 

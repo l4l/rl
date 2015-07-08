@@ -1,7 +1,7 @@
 #ifndef CLIENT_LOGINSEND_H
 #define CLIENT_LOGINSEND_H
 
-#include "../Consts.h"
+#include "NetInf.h"
 
 namespace login {
 

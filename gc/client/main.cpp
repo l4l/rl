@@ -1,12 +1,13 @@
+#include <iostream>
+
 #include "FL/Fl.H"
 #include "FL/Fl_Window.H"
 #include <FL/Fl_Box.H>
 #include "FL/Fl_Text_Display.H"
 
-#include <Chars.h>
-#include <iostream>
-#include "../win/InitWindow.h"
-#include "../net/Loginer.h"
+#include <net/NetInf.h>
+#include "win/InitWindow.h"
+#include "net/Loginer.h"
 
 
 Fl_Text_Buffer *map = new Fl_Text_Buffer;
@@ -23,7 +24,7 @@ int main() {
     InitWindow::setCallback([] (std::string name,
                                 std::string pass,
                                 bool isLogin) {
-        transfer(HOST, PORT, name, pass, isLogin);
+        transfer(HOST, LOG_PORT, name, pass, isLogin);
     });
     InitWindow::getInstance()->show();
     Fl_Window *window = new Fl_Window(860, 505);

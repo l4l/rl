@@ -7,7 +7,7 @@
 
 class Character {
 public:
-    Character(game::CharType);
+    Character(game::CharType&);
     Character(int);
     Character(game::CharType, short, int*);
 
@@ -30,7 +30,7 @@ private:
 
     int _hp;
     int _mp;
-#define STATS_NUM 5
+
     int _str;
     int _agi;
     int _sta;

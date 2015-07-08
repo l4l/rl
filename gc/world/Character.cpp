@@ -2,7 +2,7 @@
 
 using namespace game;
 
-Character::Character(CharType type) : _level(0), _type(type % CHARS_NUM) {
+Character::Character(CharType &type) : _level(0), _type(game::CharType(type % CHARS_NUM)) {
     switch (_type) {
         case WAR:
             setStats(WAR_BASE_STATS);
@@ -25,7 +25,7 @@ Character::Character(CharType type) : _level(0), _type(type % CHARS_NUM) {
     _mp = getMaxMp();
 }
 
-Character::Character(int type) : Character((CharType)type) {}
+Character::Character(int type) : Character((CharType&)type) {}
 
 Character::Character(CharType type, short lvl, int *diff) :
         Character(type) {

@@ -2,7 +2,7 @@
 #define CLIENT_CONSTS_H
 
 #define LOG_PORT 1028
-#define GAME_PORT
+#define GAME_PORT 1212
 #define HOST "151.248.125.250"
 
 namespace login {
