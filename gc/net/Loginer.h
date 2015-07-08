@@ -2,6 +2,8 @@
 #define CLIENT_LOGINER_H
 
 #include "LoginAnswer.h"
+#include "LoginSend.h"
+#include "LoginAnswer.h"
 #include "string"
 
 char* transfer(const std::string host, short port,

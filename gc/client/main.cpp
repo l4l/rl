@@ -1,13 +1,13 @@
-#include <iostream>
+#include "iostream"
 
 #include "FL/Fl.H"
 #include "FL/Fl_Window.H"
-#include <FL/Fl_Box.H>
+#include "FL/Fl_Box.H"
 #include "FL/Fl_Text_Display.H"
 
-#include <net/NetInf.h>
-#include "win/InitWindow.h"
-#include "net/Loginer.h"
+#include "NetInf.h"
+#include "InitWindow.h"
+#include "Loginer.h"
 
 
 Fl_Text_Buffer *map = new Fl_Text_Buffer;

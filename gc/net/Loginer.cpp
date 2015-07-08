@@ -2,8 +2,6 @@
 #include "Connection.h"
 
 #include "Loginer.h"
-#include "LoginSend.h"
-#include "LoginAnswer.h"
 
 using namespace login;
 
